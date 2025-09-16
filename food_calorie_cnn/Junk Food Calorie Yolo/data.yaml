@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 7
+names: ['Baked Potato', 'Burger', 'Donut', 'Fries', 'Hot Dog', 'Pizza', 'Sandwich']
+
+roboflow:
+  workspace: coding-projects-ljuhb
+  project: junk-food-calorie
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/coding-projects-ljuhb/junk-food-calorie/dataset/1
