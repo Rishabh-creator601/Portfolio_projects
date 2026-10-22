@@ -1,2 +1,0 @@
-I uploaded Junk Food yolo dataset because I labelled it on my own 
-whereas data-tf or tensorflow dataset i can get anywhere 
