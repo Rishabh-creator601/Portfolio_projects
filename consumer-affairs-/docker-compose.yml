@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # Baked into the client bundle at build time.
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:5000/api}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - lm-verify-network
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: mongodb://mongodb:27017/lm-verify
+      REDIS_URL: redis://redis:6379
+      OCR_SERVICE_URL: http://vision:8001
+      CLIENT_URL: ${CLIENT_URL:-http://localhost:3000}
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+      - redis
+      - vision
+    networks:
+      - lm-verify-network
+
+  # OCR and measurement sidecar. Build with OCR_ENGINE=paddleocr (the build
+  # order's starting choice) or easyocr; with neither it runs and falls back to
+  # a deterministic stub that flags every reading for officer review.
+  vision:
+    build:
+      context: ./vision-service
+      args:
+        OCR_ENGINE: ${OCR_ENGINE:-none}
+    environment:
+      OCR_ENGINE: ${OCR_ENGINE:-paddleocr}
+      # Optional VLM pass. Values come from .env, never written here -- this
+      # file is committed and a key in git history outlives its deletion.
+      VLM_ENABLED: ${VLM_ENABLED:-false}
+      VLM_PROVIDER: ${VLM_PROVIDER:-anthropic}
+      VLM_MODEL: ${VLM_MODEL:-}
+      VLM_API_KEY: ${VLM_API_KEY:-}
+      VLM_API_KEY_2: ${VLM_API_KEY_2:-}
+      VLM_API_KEY_3: ${VLM_API_KEY_3:-}
+      VLM_API_KEYS: ${VLM_API_KEYS:-}
+      EXTRACTION_FALLBACK_ENABLED: ${EXTRACTION_FALLBACK_ENABLED:-true}
+    ports:
+      - "8001:8001"
+    networks:
+      - lm-verify-network
+
+  mongodb:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - lm-verify-network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - lm-verify-network
+
+volumes:
+  mongo-data:
+
+networks:
+  lm-verify-network:
+    driver: bridge

@@ -1,0 +1,162 @@
+===============================================================================
+ LM-VERIFY - MongoDB connection
+===============================================================================
+
+ Verified live against the running server. Update this file if any of it
+ changes, so the next person does not have to rediscover it.
+
+
+-------------------------------------------------------------------------------
+ CONNECTION STRING
+-------------------------------------------------------------------------------
+
+   mongodb://127.0.0.1:27017/lm-verify
+
+   Use 127.0.0.1, NOT localhost. See "MongoDB Compass" below - this is the
+   single most likely reason a client cannot see the data.
+
+   Host        127.0.0.1
+   Port        27017
+   Database    lm-verify
+   Auth        None. No username or password is required on this instance.
+   Bind        127.0.0.1 only (IPv4 loopback). NOT reachable on ::1 or from
+               other machines on the network.
+
+
+-------------------------------------------------------------------------------
+ SERVER
+-------------------------------------------------------------------------------
+
+   MongoDB          8.0.9
+   Storage engine   wiredTiger
+   Runs as          a local service, started outside this project
+
+   The application does NOT start or stop MongoDB. start-servers.sh checks
+   that port 27017 is open and warns if it is not, but deliberately leaves
+   the service alone - other projects on this machine share it.
+
+
+-------------------------------------------------------------------------------
+ MONGODB COMPASS - if you cannot see the database
+-------------------------------------------------------------------------------
+
+   Connect to:
+
+       mongodb://127.0.0.1:27017
+
+   Typing "localhost" is the usual cause of an empty or failed connection.
+   Compass is an Electron app, and on Windows those commonly resolve
+   "localhost" to the IPv6 address ::1 first. This mongod listens on IPv4
+   only, so the connection is refused. Measured directly:
+
+       mongodb://127.0.0.1:27017    OK    9 databases, lm-verify visible
+       mongodb://localhost:27017    OK    (from Node, which prefers IPv4)
+       mongodb://[::1]:27017        FAIL  connect ECONNREFUSED ::1:27017
+
+   If Compass connects but lm-verify is not listed, press the refresh icon
+   beside "Databases" in the sidebar - Compass caches the list from the
+   moment it connected, and this database is written to continuously while
+   the app is running.
+
+
+-------------------------------------------------------------------------------
+ WHERE THE URI COMES FROM
+-------------------------------------------------------------------------------
+
+   .env at the project root:
+
+       MONGO_URI=mongodb://localhost:27017/lm-verify
+
+   Read by backend/src/config/env.js, which resolves .env relative to its own
+   file rather than the working directory - so the API picks it up whether it
+   is started from the project root or from backend/.
+
+   A real environment variable always wins over the file, which is how Docker
+   and CI override it without editing anything.
+
+   NOTE: .env currently says "localhost". That works for the Node driver,
+   which prefers IPv4. Changing it to 127.0.0.1 is harmless and removes any
+   doubt.
+
+
+-------------------------------------------------------------------------------
+ DOCKER
+-------------------------------------------------------------------------------
+
+   Inside docker compose the hostname is the service name, not localhost:
+
+       MONGO_URI=mongodb://mongodb:27017/lm-verify
+
+   Those names only resolve on the compose network. Running locally and in
+   compose need different values - this is a common source of confusion.
+
+
+-------------------------------------------------------------------------------
+ FALLBACK WHEN MONGODB IS DOWN
+-------------------------------------------------------------------------------
+
+   backend/src/config/db.js tries the configured URI with a 2 second timeout.
+   If it cannot connect it starts an in-memory MongoDB instead and seeds demo
+   data into it.
+
+   That keeps the app usable with no database installed, but everything is
+   LOST when the API stops. If inspections disappear between restarts, the
+   real MongoDB was not running - check the startup log for:
+
+       MongoDB Connected: localhost        <- real database
+       In-Memory MongoDB Started           <- nothing will persist
+
+
+-------------------------------------------------------------------------------
+ DATABASE: lm-verify
+-------------------------------------------------------------------------------
+
+   Collection        Docs   Holds
+   ---------------------------------------------------------------------------
+   users                3   Officer accounts, roles, hashed passwords,
+                            hashed refresh tokens
+   inspections         16   Captures, extracted declarations, compliance
+                            results, extraction reports, penalties
+   products             2   Packaged commodities and their compliance history
+   reports              4   Generated PDF/XLSX metadata: SHA-256 hash, QR
+                            verification token, GridFS file id
+   rulepacks            1   Versioned statutory rule packs
+   auditlogs          218   Every sign-in, override, adjudication and download
+   uploads.files        3   GridFS - the generated report files themselves
+   uploads.chunks       3   GridFS - their binary chunks
+
+   Counts were accurate when this file was written; they grow with use.
+
+   NOTE ON rulepacks: the API falls back to the bundled
+   backend/src/data/rulePack_v1.json when the stored pack is empty, so an
+   empty rulepacks document does not break anything and will not show up in
+   normal use. Worth checking it actually contains the 24 rules.
+
+
+-------------------------------------------------------------------------------
+ OTHER DATABASES ON THIS SERVER
+-------------------------------------------------------------------------------
+
+   calorie-tracker, inotebook, merncomm, notes_db, todos_db
+
+   These belong to other projects. This application only ever touches
+   lm-verify. Do not drop the server or clear it wholesale.
+
+
+-------------------------------------------------------------------------------
+ QUICK CHECKS
+-------------------------------------------------------------------------------
+
+   Is MongoDB listening?
+       netstat -ano | grep 27017
+
+   Which mongod, and on what address?
+       powershell "Get-NetTCPConnection -LocalPort 27017 -State Listen"
+
+   Did the API reach the real database?
+       grep 'MongoDB Connected' logs/backend.log
+
+   List databases and collections from the project:
+       cd backend && node -e "const {MongoClient}=require('mongodb');(async()=>{const c=new MongoClient('mongodb://127.0.0.1:27017');await c.connect();const {databases}=await c.db().admin().listDatabases();console.log(databases.map(d=>d.name).join('\n'));await c.close();})()"
+
+===============================================================================

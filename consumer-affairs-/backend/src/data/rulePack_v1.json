@@ -1,0 +1,348 @@
+[
+  {
+    "id": "R6_1_A",
+    "citation": "Rule 6(1)(a)",
+    "subject": "Manufacturer / packer / importer name and address",
+    "description": "Name and complete address of the manufacturer. If the manufacturer is not the packer, both names and addresses. For imported packs, the importer's name and address.",
+    "applicability": {
+      "excludeCategories": [
+        "food_manufacturer_id"
+      ],
+      "scope": "retail"
+    },
+    "severity": "critical",
+    "penaltyAmount": 2000,
+    "automationLevel": "full",
+    "method": "Named-entity extraction over the address block; the qualifying words manufactured by, packed by and imported by are detected and attributed per the Explanations to Rule 6."
+  },
+  {
+    "id": "R6_1_B",
+    "citation": "Rule 6(1)(b)",
+    "subject": "Generic Name",
+    "description": "Common or generic name of the commodity.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "critical",
+    "penaltyAmount": 2000,
+    "automationLevel": "full",
+    "method": "Classified against a commodity lexicon; brand name alone is rejected as insufficient."
+  },
+  {
+    "id": "R6_1_C",
+    "citation": "Rule 6(1)(c)",
+    "subject": "Net Quantity",
+    "description": "Net quantity in standard units of weight, measure or number.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "critical",
+    "penaltyAmount": 2000,
+    "automationLevel": "full",
+    "method": "Regex plus unit parser over the panel; value and unit normalised and cross-checked against Rules 12 and 13."
+  },
+  {
+    "id": "R6_1_D",
+    "citation": "Rule 6(1)(d)",
+    "subject": "Month and Year of Manufacture",
+    "description": "Month and year in which the commodity is manufactured or pre-packed or imported.",
+    "applicability": {
+      "excludeCategories": [
+        "bidi",
+        "incense",
+        "lpg",
+        "food",
+        "cosmetics"
+      ],
+      "scope": "retail"
+    },
+    "severity": "critical",
+    "penaltyAmount": 2000,
+    "automationLevel": "full",
+    "method": "Date parser accepting words, numerals or both; category exemptions applied for food, cosmetics, bidi and LPG."
+  },
+  {
+    "id": "R6_1_E",
+    "citation": "Rule 6(1)(e)",
+    "subject": "Retail Sale Price",
+    "description": "Retail sale price of the package in specified format.",
+    "applicability": {
+      "excludeCategories": [
+        "bidi"
+      ],
+      "scope": "retail"
+    },
+    "severity": "critical",
+    "penaltyAmount": 2000,
+    "automationLevel": "full",
+    "method": "Pattern match on the prescribed wording; value parsed and the Rule 2(m) rounding convention verified."
+  },
+  {
+    "id": "R6_1_F",
+    "citation": "Rule 6(1)(f)",
+    "subject": "Dimensions",
+    "description": "Where dimensions of commodity exist.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "critical",
+    "penaltyAmount": 2000,
+    "automationLevel": "assisted",
+    "method": "Declared dimensions parsed where the size of the commodity is relevant."
+  },
+  {
+    "id": "R6_1_G",
+    "citation": "Rule 6(1)(g)",
+    "subject": "Contact details",
+    "description": "Consumer care contact details if other than R6_2",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "critical",
+    "penaltyAmount": 2000,
+    "automationLevel": "assisted",
+    "method": "Presence check for any further matter these Rules require on the panel."
+  },
+  {
+    "id": "R6_2",
+    "citation": "Rule 6(2)",
+    "subject": "Consumer Care Details",
+    "description": "Name, address, telephone, email of the person who can be or the office which can be, contacted, in case of consumer complaints.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "critical",
+    "penaltyAmount": 2000,
+    "automationLevel": "full",
+    "method": "Presence of contact name or office, address, telephone and e-mail; each component reported separately."
+  },
+  {
+    "id": "R6_3",
+    "citation": "Rule 6(3)",
+    "subject": "Sticker over MRP",
+    "description": "Declaration of MRP shall not be covered by sticker.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "critical",
+    "penaltyAmount": 2000,
+    "automationLevel": "assisted",
+    "method": "Edge and texture discontinuity detection around the MRP region; officer confirms."
+  },
+  {
+    "id": "R7_2_T1",
+    "citation": "Rule 7(2) Table I",
+    "subject": "Numeral height by weight/volume",
+    "description": "Minimum numeral height based on net quantity.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 2000,
+    "automationLevel": "assisted",
+    "method": "Glyph height in mm from calibration, tested against the 1 / 2 / 4 mm bands, doubled for blown or embossed containers."
+  },
+  {
+    "id": "R7_2_T2",
+    "citation": "Rule 7(2) Table II",
+    "subject": "Numeral height by panel area",
+    "description": "Minimum numeral height based on principal display panel area.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 2000,
+    "automationLevel": "assisted",
+    "method": "Panel area estimated from calibration, then the 1 / 2 / 4 / 6 mm bands applied."
+  },
+  {
+    "id": "R7_3",
+    "citation": "Rule 7(3)",
+    "subject": "Letter height and width ratio",
+    "description": "Width of letter shall not be less than one-third of its height.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 2000,
+    "automationLevel": "assisted",
+    "method": "Minimum 1 mm letter height; width measured at no less than one third of height, excluding the exempted glyphs."
+  },
+  {
+    "id": "R8_1",
+    "citation": "Rule 8(1)",
+    "subject": "Panel placement and clear space",
+    "description": "Clear space around quantity declaration.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 2000,
+    "automationLevel": "assisted",
+    "method": "Panel classification plus geometric measurement of the printed-matter-free margin around the quantity declaration."
+  },
+  {
+    "id": "R9_1_A",
+    "citation": "Rule 9(1)(a)",
+    "subject": "Legibility",
+    "description": "Declarations shall be legible and prominent.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 2000,
+    "automationLevel": "assisted",
+    "method": "Capture quality and per-token OCR confidence reported as evidence; prominence remains an officer judgement."
+  },
+  {
+    "id": "R9_1_B",
+    "citation": "Rule 9(1)(b)",
+    "subject": "Contrast of MRP and quantity",
+    "description": "Adequate contrast between text and background.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 2000,
+    "automationLevel": "assisted",
+    "method": "Local luminance contrast ratio between glyph pixels and background; ambiguous cases routed to review."
+  },
+  {
+    "id": "R9_2",
+    "citation": "Rule 9(2)",
+    "subject": "Not read through liquid",
+    "description": "Declarations shall not be printed so as to be read through liquid.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 2000,
+    "automationLevel": "flagged",
+    "method": "Transparency and refraction cues; flagged for the officer, never auto-failed."
+  },
+  {
+    "id": "R9_4",
+    "citation": "Rule 9(4)",
+    "subject": "Language",
+    "description": "Declarations must be in Hindi in Devanagari script or English.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 2000,
+    "automationLevel": "full",
+    "method": "Script detection across the declaration block for Devanagari and Latin."
+  },
+  {
+    "id": "R11_2",
+    "citation": "Rule 11(2)",
+    "subject": "When packed qualifier",
+    "description": "When packed qualifier permitted only for Third Schedule items.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 2000,
+    "automationLevel": "full",
+    "method": "Phrase detection cross-referenced against the Third Schedule commodity list."
+  },
+  {
+    "id": "R12_2",
+    "citation": "Rule 12(2)",
+    "subject": "Correct unit class",
+    "description": "Quantity expressed in terms of weight, volume, measure, etc. correctly.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 2000,
+    "automationLevel": "full",
+    "method": "Commodity state inferred, then mass, length, area, volume or number verified as the right basis."
+  },
+  {
+    "id": "R12_6",
+    "citation": "Rule 12(6)",
+    "subject": "Misleading quantity wording",
+    "description": "No ambiguous expressions around quantity.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 2000,
+    "automationLevel": "full",
+    "method": "Lexicon match for minimum, not less than, average, about, approximately and near-variants within the quantity region."
+  },
+  {
+    "id": "R13_2",
+    "citation": "Rule 13(2)",
+    "subject": "Unit subdivision",
+    "description": "Correct subdivision of units.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 2000,
+    "automationLevel": "full",
+    "method": "Gram below a kilogram, millilitre below a litre, centimetre below a metre."
+  },
+  {
+    "id": "R18_2",
+    "citation": "Rule 18(2)",
+    "subject": "Sale above MRP",
+    "description": "Sale of commodity above retail sale price.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 2000,
+    "automationLevel": "assisted",
+    "method": "Declared MRP compared against the shelf or listing price captured during inspection."
+  },
+  {
+    "id": "R31_2",
+    "citation": "Rule 31(2)",
+    "subject": "Advertisement font parity",
+    "description": "Advertisement parity check.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "major",
+    "penaltyAmount": 4000,
+    "automationLevel": "assisted",
+    "method": "For listing scans, net-quantity font size compared against retail-sale-price font size."
+  },
+  {
+    "id": "SPELL",
+    "citation": "Custom",
+    "subject": "Spelling check",
+    "description": "Check for basic spellings in descriptions.",
+    "applicability": {
+      "excludeCategories": [],
+      "scope": "retail"
+    },
+    "severity": "minor",
+    "penaltyAmount": 0,
+    "automationLevel": "full",
+    "method": "Dictionary check with a domain lexicon; doubles as an OCR-quality signal. Advisory only, carries no penalty."
+  }
+]

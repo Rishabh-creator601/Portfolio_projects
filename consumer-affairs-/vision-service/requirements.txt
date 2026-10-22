@@ -1,0 +1,30 @@
+# --- Service ---
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+pydantic==2.9.2
+# Reads the shared project .env so the service picks up VLM_API_KEY without
+# every caller having to export it by hand.
+python-dotenv==1.0.1
+
+# --- Classical CV (steps 4 and 5, plus the no-model gates) ---
+numpy==1.26.4
+opencv-python-headless==4.10.0.84
+scikit-image==0.24.0
+Pillow==10.4.0
+
+# --- OCR engines. Install one; both implement the same contract. ---
+# PP-OCRv5 is the starting choice per the build order: better on small dense
+# print, better multilingual coverage, faster on CPU. Benchmark before keeping it.
+#   pip install paddlepaddle==2.6.1 paddleocr==2.8.1
+# EasyOCR is the alternative:
+#   pip install easyocr==1.7.2
+#
+# Neither is a hard dependency: with no weights installed the service falls back
+# to a deterministic stub and flags every reading for officer review.
+
+# --- Optional: VLM tagging (step 3) ---
+# Install only the provider you use; the adapter picks it from VLM_PROVIDER.
+#   pip install anthropic>=0.40.0     # VLM_PROVIDER=anthropic
+#   pip install google-genai>=1.0.0   # VLM_PROVIDER=google
+#   pip install openai>=1.40.0        # VLM_PROVIDER=openai

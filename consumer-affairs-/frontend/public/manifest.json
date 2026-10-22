@@ -1,0 +1,11 @@
+{
+  "name": "LM-Verify - Legal Metrology Compliance",
+  "short_name": "LM-Verify",
+  "description": "Automated compliance checking for packaged commodities under the Legal Metrology (Packaged Commodities) Rules, 2011",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#083344",
+  "background_color": "#F3FBFD",
+  "icons": []
+}

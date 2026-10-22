@@ -1,0 +1,12 @@
+# Large intermediates / raw data (not pushed)
+work/
+kaggle_data/
+dataset/
+output/
+*.zip
+*.mp4
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+submission/output/   # same files as output_v4/ (pushed)
+!artifacts/v1/*.zip

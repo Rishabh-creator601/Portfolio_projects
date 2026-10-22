@@ -1,0 +1,6 @@
+entities 20000: true pairs 69960, in candidates 66371, missed 3589 (5.130%); seeds 66371
+top-3 per seed: recovers 832/3589 missed pairs (23.2%); new candidates per entity 7.01
+top-5 per seed: recovers 993/3589 missed pairs (27.7%); new candidates per entity 14.80
+top-10 per seed: recovers 1159/3589 missed pairs (32.3%); new candidates per entity 34.80
+top-20 per seed: recovers 1371/3589 missed pairs (38.2%); new candidates per entity 73.72
+EXIT 0

@@ -1,0 +1,14 @@
+# Normalise line endings for text, and keep binaries byte-exact.
+# Without this, core.autocrlf=true rewrites the bundled PDFs and corrupts them.
+* text=auto eol=lf
+
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
+
+*.sh text eol=lf

@@ -1,0 +1,13 @@
+{
+  "firstSchedule": {
+    "tableI": [
+      { "upto": 50, "mpePercent": 9, "mpeGrams": null },
+      { "upto": 100, "mpePercent": null, "mpeGrams": 4.5 },
+      { "upto": 200, "mpePercent": 4.5, "mpeGrams": null },
+      { "upto": 300, "mpePercent": null, "mpeGrams": 9 },
+      { "upto": 500, "mpePercent": 3, "mpeGrams": null },
+      { "upto": 1000, "mpePercent": null, "mpeGrams": 15 }
+    ]
+  },
+  "thirdSchedule": ["All kinds of soaps", "Lotions", "Cream other than cream of milk"]
+}

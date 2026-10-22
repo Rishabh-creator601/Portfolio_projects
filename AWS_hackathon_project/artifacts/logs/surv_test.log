@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\build_survivors.py", line 104, in <module>
+    main()
+  File "C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\build_survivors.py", line 98, in main
+    subprocess.run([sys.executable, os.path.abspath(__file__), "--work", a.work, "--split", a.split,
+  File "C:\Program Files\Python311\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Program Files\\Python311\\python.exe', 'C:\\Users\\RISHABH\\Desktop\\AWS_hack\\code\\business_entity_resolution\\src\\build_survivors.py', '--work', 'work', '--split', 'test', '--chunk', '0']' returned non-zero exit status 3221225477.
+exit=1

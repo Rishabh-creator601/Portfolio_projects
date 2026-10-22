@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\build_survivors.py", line 100, in <module>
+    main()
+  File "C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\build_survivors.py", line 73, in main
+    return one_chunk(a, a.chunk)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\build_survivors.py", line 49, in one_chunk
+    X = build_features(p)
+        ^^^^^^^^^^^^^^^^^
+  File "C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\features.py", line 58, in build_features
+    F["n_ratio"] = _sim(n1, n2, fuzz.ratio)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\features.py", line 18, in _sim
+    return process.cpdist(a, b, scorer=scorer, workers=-1, dtype=np.float32)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\RISHABH\AppData\Roaming\Python\Python311\site-packages\rapidfuzz\process_cpp.py", line 110, in cpdist
+    distance_matrix = _cpdist(
+                      ^^^^^^^^
+  File "src/rapidfuzz/process_cpp_impl.pyx", line 2067, in rapidfuzz.process_cpp_impl.cpdist
+  File "src/rapidfuzz/process_cpp_impl.pyx", line 1816, in rapidfuzz.process_cpp_impl.cpdist_cpp
+  File "src/rapidfuzz/process_cpp_impl.pyx", line 1692, in rapidfuzz.process_cpp_impl.preprocess
+MemoryError: bad allocation
+Traceback (most recent call last):
+  File "C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\build_survivors.py", line 100, in <module>
+    main()
+  File "C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\build_survivors.py", line 94, in main
+    subprocess.run([sys.executable, os.path.abspath(__file__), "--work", a.work, "--split", a.split,
+  File "C:\Program Files\Python311\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Program Files\\Python311\\python.exe', 'C:\\Users\\RISHABH\\Desktop\\AWS_hack\\code\\business_entity_resolution\\src\\build_survivors.py', '--work', 'work', '--split', 'train', '--chunk', '0']' returned non-zero exit status 1.
+exit=1

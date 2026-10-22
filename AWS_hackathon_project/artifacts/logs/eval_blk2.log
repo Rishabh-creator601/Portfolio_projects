@@ -1,0 +1,6 @@
+S1 sample 100000, true pairs 345264
+base: cands/S1=79.66 pair_recall=0.9597 f05_ceiling=0.9856 recall@k={5: 0.9133, 10: 0.9378, 15: 0.9463, 20: 0.9508, 30: 0.9562, 40: 0.9597} (481s)
+EXIT 139
+S1 sample 100000, true pairs 345264
+extra: cands/S1=79.76 pair_recall=0.9647 f05_ceiling=0.9883 recall@k={5: 0.916, 10: 0.9415, 15: 0.9508, 20: 0.9559, 30: 0.9616, 40: 0.9647} (613s)
+EXIT 0

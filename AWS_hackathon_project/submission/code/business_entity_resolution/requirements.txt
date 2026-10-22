@@ -1,0 +1,8 @@
+# Python 3.11.9
+pandas==2.3.0
+numpy==1.26.4
+polars==1.33.1
+pyarrow==21.0.0
+lightgbm==4.7.0
+rapidfuzz==3.14.3
+Unidecode==1.4.0

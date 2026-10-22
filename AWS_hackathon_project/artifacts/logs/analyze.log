@@ -1,0 +1,117 @@
+{
+ "n": 20000,
+ "cands_per_s1": 4.3705,
+ "stageA_pair_recall": 0.9483792825008651,
+ "ceiling": 0.9817806635083561,
+ "macro_f05": 0.9524595366990739,
+ "macro_f05_US": 0.9584184432658356,
+ "macro_f05_India": 0.9437431407987461,
+ "pair_precision": 0.9858036724940259,
+ "pair_recall": 0.9041556119506287,
+ "singletons": 1093,
+ "singleton_acc": 0.938700823421775
+}
+
+===== FALSE MERGES (predicted, not true)
+[p=0.93] Bhojwani Centre | At Ravi Shankar Kumar Bpiu Baisi At Upon The, Old Post Office Baisi Bazar Sbi Raoad Po Baisi Ps Baisi, Purnea, Purnia, Bihar
+      -> Bhojwani Centre Pvt Ltd | No 68 At Ravi Shankar Kumar Bpiu Baisi At Upon The, Old Post Office Baisi Bazar Sbi Raoad Po Baisi Ps Baisi, Purnea, Purnia, बिहार
+[p=0.73] Dominguez Continental Genesis Inc | 812 Deerfield Road, Deerfield, IL
+      -> Dominguez Continental Genesis Co | 0814 Deerfield Road, Deerfield, Illinois
+[p=0.99] QOM Projects Private Limited | Shopno.5 &6, Sbuilding, Dhruvdarshan, S.No.178/5B, Pcntda, Nigdi, Pune, Maharashtra
+      -> Private QOM Exports Ltd | 6 &6, Sbuilding, Dhruvdarshan, S.no.178/5b, Pcntda, Nigdi, Poona, Pune, MH
+[p=0.99] Seri Lingampally Clinics Ltd | 5Th Floor, Kapil Towers, Isb Road, Nanakaramguda, Financial District, Seri Lingampally, K.V.Rangareddy, Telangana
+      -> Corp Seri Lingampally Aluminium | LEVEL 5, KAPIL TOWERS, FINANCIAL DISTRICT, GACHIBOWLI, K.V.RANGAREDDY, SERI LINGAMPALLY, Telangana
+[p=0.95] TN Fund Pvt. Ltd. | Darbhanga, Bihar, Arun Kumar Chakrwarti, Dilawarpur, Bahadurpur
+      -> The XN Fund Pvt. Ltd. | BR, Darbhanga, Dilawarpur, Bahadurpur, Arun Kumar Chakrwarti
+[p=0.69] All Power Private Limited | Group No. 8B, Tagore Nagar, Near Post Office, Mumbai, 206/3007, Mumbai City, Maharashtra
+      -> All Power LLP | 206/300, GROUP NO. 8B, TAGORE NAGAR, NEAR POST OFFICE, MUMBAI, महाराष्ट्र
+[p=0.98] Uic Group of Companies | Khasra No.3, Gurugram, Gurgaon, Haryana, Gurugram, Dharamniwas First Floor
+      -> Uic Group of Companies Group | DOOR NO ##74 DHARAMNIWAS FIRST FLOOR, KHASRA NO.3, GURUGRAM, GURUGRAM, Haryana
+[p=0.76] Star Consultancy Private Limited | 5F, Everest, 46/C, Chowringhee Ps: Shakespeare Sarani, Kolkata, Howrah, West Bengal
+      -> redc0nsultancycom | NO ##5 F EVEREST46/ CHOWRINGHEE RD, KOLKATA, West Bengal
+[p=0.72] Balaji Global LLP | Flat No 4-906, The Serenas, Sector-36 Gurugram, Sohna, Gurgaon, Haryana
+      -> Balaji Global Pvt Ltd | Flat No A-4-915, The Serenas, Sector-36 Gurugram, Gurgaon, Raipur, HR
+[p=0.83] Bombay Trading Private Limited | Do No 6, 141A Appattuvilai Thuckalay Po, Kanyakumar, Kanyakumari, Tamil Nadu
+      -> Vantagebrix | Tamil Nadu, Kanyakumari, Do No 6, 141A Appattuvilai Thuckalay Po, Kanyakumar
+[p=0.65] Midwest Western LLC | 1414 Mockingbird Lane, Olney, TX
+      -> MIDWEST WESTERN | 
+[p=0.69] New Delhi Innovation Private Limited | House No.1032 & 1033, Second Floor Blk A, Jahangirpuri, New Delhi, North West, Delhi
+      -> New Delhi Private Innovation Limited | 
+[p=0.99] Krati Organics Limited | 253A/4, Ram Nagar, Gurgaon, Haryana
+      -> Krati Organics Pvt Ltd | 253A/, RAM NAGAR, GURGAON, हरियाणा
+[p=0.79] Vidhata Consultancy Private Limited | 10 Princep St1St Floor, Kolkata, Calcutta, West Bengal
+      -> karmikpartnerscom | 10 PRINCEP STREET 1ST FL, KOLKATA, West Bengal
+[p=0.86] Desert Precision, LLC | 3540 Mya Rose Court, Dubuque, IA
+      -> DESERT PRECISION | 
+[p=0.76] QF Bsp Inc | Billings, MT, 4310 State Avenue
+      -> QF BSP L.L.C. | 4312 STATE AVE, BILLINGS, MT
+[p=0.66] Orozco, Blackmon & Dubois L.L.C. | 320 Brown Street, West Lafayette, IN
+      -> Orozco, Blackmon & Dubois Ltd | 32 Brown Street, W. Lafayette, Indiana
+[p=0.79] Future Miracle Private Limited | C/O Shivshambhu Singh, Bazar Samiti Road, Bettiah, West Champaran, Bihar
+      -> Future Memorial Private Limited | Door No B3/87 C/o Shivshambhu Sibgh, Bazar Samiti Road, Bettiah, West Champaran, BR
+[p=0.74] Wright, Sindelar & Rose | Lake Oswego, 1 Jefferson Parkway, Unit #183, OR
+      -> wright, sindelar & rose | 
+[p=0.86] ABL Bpo Public Limited | Apra Plaza, Plot No-29, Delhi, 302, Delhi, Community Centre Pitam Pura
+      -> ABL Bpo Public | 
+[p=0.97] Super Products Private Limited | No. 4, 9Th Cross, Akshay Nagar, Bangalore North, Bangalore, Karnataka
+      -> Super Limited Private Products | S.no. 4, Bangalore North, Bangalore, KA
+[p=0.96] DR Dairy | 263A/95/95 Sohbatiabagh, Uttar Pradesh, Allahabad
+      -> DR Supply | Uttar Pradesh, DOOR NO 263A/95/97 SOHBATIABAGH, ALLAHABAD
+[p=0.77] Elysha Anderson Custom Value, LLC | 3 Everard Street, Unit 3, Worcester, MA
+      -> Elysha Anedron Custom Value, LLC | 
+[p=0.96] National Freight Products Inc | 3543 Howe Street, Seattle, WA
+      -> National Products Co Partners | 354 Howe St, Seattle, Washington
+[p=0.91] Lawhorne, Gonzalez & Mccambridge Logistics LLC | 49 Sterup Drive, Pittstown, NY
+      -> Rangel, Gonzalez & Mccambridge Logistics Llc | 49 STERUP DR, TRO YCITY, NY
+
+===== MISSED MATCHES (true, not predicted; p=None means lost in candidate generation)
+[p=0.18] Amigos (India) Wind Private Limited | 35 Patparganj Industrial Area Iind Floor, Delhi, East Delhi, Delhi
+      -> Limited Amigos (India) Private Service | No 36 Patparganj Industrial Area Iind Floor, East Delhi, Delhi, DL
+[p=None] Sweet Diner! | TX, Houston, 1939 Wycliffe Drive
+      -> Sweet Diner! Corporation Corporation | 
+[p=None] Newsome's Development | 13620 130th Street, Gig Harbor, WA
+      -> Newsome's  Services | WA, GIG HARBOR, 130TH ST
+[p=None] High Care Private Limited | C 103, Golden Chariot, Ashoka Academy School Lane Noble Chemist, Lokhandwala Complex, Andh, Eri West, Mumbai, Mumbai City, Maharashtra
+      -> High Cecre  Private Limited | महाराष्ट्र, Plot 822 C 103, Mumbai City, Bombay
+[p=0.44] Domeniga Novotny, DO, PC | 658 Broadview Terrace, Hartford, CT
+      -> DOMENIGA NOVOTNY, DO, INC | 65 BROADVIEW TERRACE, PMB 2857, HARTFORD, CT
+[p=0.41] Domeniga Novotny, DO, PC | 658 Broadview Terrace, Hartford, CT
+      -> Domeniga Novotny, DO, | 
+[p=None] Muller Medicos Private Limited | Plot No.-10, Nimpura Industrial Growth Centre Nimpura, Kharagpur, Midnapore, West Bengal
+      -> Shri Muller Private Limited Services | 
+[p=0.34] Dominguez Continental Genesis Inc | 812 Deerfield Road, Deerfield, IL
+      -> Dominguez Continental Genesis Inc | 01157 Deerfield Rd, Illinois, Deerfield
+[p=None] Swatipushp Consultants Private Limited | H.No. 6-3-1219/Ae/2/503F, Osadia Private Residence, Secunderabad, Hyderabad, Telangana
+      -> SWATIPUSHP PRIVATE LIMITED  PARTNERS | 
+[p=None] Colonial Tri-State Ameren Inc | 5209 88th Street, Lubbock, TX
+      -> Colonial Tri-State | 88TH ST, LUBBOCK, TX
+[p=0.42] XK Allurion L.L.C. | 321 7th Street, Lewisville, AR
+      -> XK Allurion | 121 7th St, Lewisville, Arkansas
+[p=None] Cozy Bistro | Tigard, OR, Unit #166, 11401 135th Avenue
+      -> Cozy (8istro) | 11401 135TH AVENUE, TIGARD, OR
+[p=None] Modern Media Group | 30 Rockingham Avenue, Unit 517, Boston, MA
+      -> Modern Media | 
+[p=None] Vision Business Private Limited | B-1/632, 2Nd Floor, Janakpuri, New Delhi, South Delhi, Delhi
+      -> विजन बिजनेस प्राइवेट लिमिटेड | #100 B-1/632, NEW DELHI, Delhi
+[p=None] Rapid Supreme Nasdaq LLC | 5609 Memorial, Arlington, TX
+      -> Rapid Sureme Nasdaq LLC | 560 MEMORIAL, ARRLINGTON CITY, TX
+[p=0.54] East Delhi Moto Private Limited | B-1209/1210, G.D. Colony, Mayur Vihar Phase 3, East Delhi, Delhi
+      -> East Private Moto Delhi Limited | 
+[p=None] Global Infra Private Limited | 102, Anand Bhavan, K.N. Road, Chinch Bunder, Dongri, Mumbai, Mumbai City, Maharashtra
+      -> G1obal Infra Private-Ltd | 102, Mumbai, Mumbai City, MH
+[p=0.46] Mott Reliable Systems Inc | 108 Woodland Court, Hendersonville, TN
+      -> Mott Reliable Systems | 5 Woodland Court, Hendersonville, Tennessee
+[p=None] Physical Therapy Express Specialists Group | 723 Abner Road, Bridgeport, WV
+      -> Physical Therapy Express Specialists | 
+[p=None] Blue Business LLP | Corporate Park, 1St Floor, Silicon Valley, Madhapur, Hyderabad, Shaikpet, Telangana, Hyderabad, Plot No 31
+      -> B1ue LLP Center | H.no 31, Shaikpet, Hyderabad, TG
+[p=None] Chiropractic Trusted Center, LLC | 301 Martin Luther King Boulevard, Unit 107, Chattanooga, TN
+      -> CHIROPRACTIC TRUSTED | 
+[p=None] Asset Building Foundation | 604 Union Street, Fostoria, OH
+      -> Asset Building Foundation LP | Ohio, Fostria, Union St
+[p=None] Guru Hospitality Private Limited | South West Delhi, Front Portion, E-223, Naraina Vihar, Delhi, Room No.1, New Delhi
+      -> गुरु हॉस्पिटैलिटी प्राइवेट लिमिटेड | SOUTH WEST DELHI, Delhi, ROOM NO.1, NEW DELHI
+[p=0.43] Bettis & Duke Inc. | 20256 450, Lindale, TX
+      -> Bettis & Duke | TX, LINDALE, 20161 450
+[p=None] Regional Association | 102 Terrace Court, Unit 4B, Johnson City, TN
+      -> REGIONAL ASSOCIATION Enterprises | 

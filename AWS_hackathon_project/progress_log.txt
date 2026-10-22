@@ -1,0 +1,63 @@
+AMAZON ML CHALLENGE 2026 - BUSINESS ENTITY RESOLUTION
+Team: Out of Bounds  (Rishabh Agarwal - leader, Hariom Ji Rai, Jatin)
+Progress log: one entry per model version / leaderboard submission
+======================================================================
+
+Metric: macro F0.5 (higher is better, max 1.0)
+"Validation" = our own score on held-out training entities (not the leaderboard)
+"Leaderboard" = public leaderboard score on the portal (subset of test set)
+
+----------------------------------------------------------------------
+[v1] 26 Sep 2026, 05:11 PM IST  -  FIRST SUBMISSION
+----------------------------------------------------------------------
+Leaderboard score : 0.940467
+Leaderboard rank  : 1355
+Validation score  : 0.951 (holdout, 50k entities) / 0.952 (20k unseen entities)
+                    US 0.958, India 0.944 (France not in training data)
+Candidates / S1   : 5.21 on test (4.37 on validation), pair recall 94.7%
+Best possible     : 0.981 (perfect decisions on our candidate set)
+Model             : rare-key blocking -> LightGBM filter (stage A)
+                    -> LightGBM matcher (stage B, 50 features), threshold 0.65
+Files             : output/matching_results.tsv (uploaded)
+                    Out_of_Bounds_submission.zip (final package, valid)
+Notes             : Leaderboard 1.2 pt below validation; likely France
+                    (unseen country) and test/train distribution differences.
+
+----------------------------------------------------------------------
+[v2] PLANNED - matcher improvements (in progress)
+----------------------------------------------------------------------
+Changes           : 1. rare-word (IDF) weighted name/address overlap features
+                    2. house-number numeric distance features
+                    3. 2nd-round model using sibling/group context
+                    4. more training data (600k entities vs 250k)
+                    5. French normalisation fixes (N°, Ch., All., d')
+Validation score  : (pending - final ensemble)
+  Experiments (same 120k-entity holdout, ceiling 0.9814):
+    B0 v1 features, 600k training entities ........ 0.9520
+    B1 + rare-word & house-number features ........ 0.9641  (+1.2 pt)   [26 Sep, 17:50]
+    C  + second-round sibling model ............... 0.9666  (+0.25 pt)   [26 Sep, 18:25]
+    + GPU cross-encoders (Kaggle, private):
+        MiniLM-L12 multilingual (118M) ............ done on Kaggle 2x Tesla T4 (79 min);
+                                                    pair accuracy 97.3% on its own
+                                                    [26 Sep, 19:08]
+        mDeBERTa-v3-base (280M) ................... done on Kaggle; scores downloaded, no NaNs [27 Sep, 09:45]
+    D  + both cross-encoders as features (v4) ..... 0.9736  (+0.7 pt)   [27 Sep]
+  v4 finished 27 Sep 12:11 -> output_v4/ (also copied to submission/output/)
+    threshold 0.725, 5.60M matched pairs, 1,622,433 / 1,732,544 S1 with a match
+    format checked against v1; official validator missing (dataset/ folder deleted)
+Leaderboard score : 0.97051 (v4, uploaded 27 Sep 2026; +3.0 pt over v1)
+Leaderboard rank  : 1235 (up from 1355)
+
+----------------------------------------------------------------------
+[v5] PLANNED - raise the candidate ceiling (0.981) - diagnostics 27 Sep
+----------------------------------------------------------------------
+Blocking misses 5.1% of true pairs (14,296 missed in a 3-chunk sample; US and India equally).
+  Query expansion (oracle): top-3 per seed recovers 23% of misses (+7 cands/S1);
+                            top-20 recovers 38% (+74 cands/S1) - expensive.
+  Why pairs are missed (overlapping):
+    identical name ........................... 27%  (generic names -> no rare key under df cap 300)
+    target address empty ..................... 27%
+    same house number + 2 street words ....... 30%
+  New exact keys would cover: name equal/contained + city (or empty addr) 42%,
+                              house number + street 30%,  either 61% of misses
+  -> est. pair recall 95.1% -> ~98%. Rest: typos/transliteration, different names.

@@ -1,0 +1,171 @@
+[      6s] train: S1=2206821 targets=10320219 true pairs=7638365
+[    172s]   blocking S2: file 1/23, pairs 1996652
+[    183s]   blocking S2: file 2/23, pairs 1996930
+[    195s]   blocking S2: file 3/23, pairs 1996916
+[    206s]   blocking S2: file 4/23, pairs 1996753
+[    217s]   blocking S2: file 5/23, pairs 1997099
+[    228s]   blocking S2: file 6/23, pairs 1996669
+[    238s]   blocking S2: file 7/23, pairs 1996986
+[    250s]   blocking S2: file 8/23, pairs 1996973
+[    261s]   blocking S2: file 9/23, pairs 1996477
+[    272s]   blocking S2: file 10/23, pairs 1996721
+[    283s]   blocking S2: file 11/23, pairs 1996851
+[    295s]   blocking S2: file 12/23, pairs 1996483
+[    306s]   blocking S2: file 13/23, pairs 1997087
+[    317s]   blocking S2: file 14/23, pairs 1997128
+[    328s]   blocking S2: file 15/23, pairs 1996798
+[    340s]   blocking S2: file 16/23, pairs 1996840
+[    351s]   blocking S2: file 17/23, pairs 1996487
+[    362s]   blocking S2: file 18/23, pairs 1996824
+[    373s]   blocking S2: file 19/23, pairs 1996546
+[    385s]   blocking S2: file 20/23, pairs 1996712
+[    396s]   blocking S2: file 21/23, pairs 1996903
+[    407s]   blocking S2: file 22/23, pairs 1997053
+[    408s]   blocking S2: file 23/23, pairs 136238
+[    526s]   blocking S3: file 1/23, pairs 1996921
+[    537s]   blocking S3: file 2/23, pairs 1996866
+[    549s]   blocking S3: file 3/23, pairs 1996783
+[    560s]   blocking S3: file 4/23, pairs 1996558
+[    572s]   blocking S3: file 5/23, pairs 1996963
+[    583s]   blocking S3: file 6/23, pairs 1996587
+[    594s]   blocking S3: file 7/23, pairs 1996827
+[    606s]   blocking S3: file 8/23, pairs 1996990
+[    617s]   blocking S3: file 9/23, pairs 1996586
+[    628s]   blocking S3: file 10/23, pairs 1996731
+[    640s]   blocking S3: file 11/23, pairs 1996787
+[    652s]   blocking S3: file 12/23, pairs 1996410
+[    663s]   blocking S3: file 13/23, pairs 1996898
+[    674s]   blocking S3: file 14/23, pairs 1996959
+[    685s]   blocking S3: file 15/23, pairs 1996809
+[    696s]   blocking S3: file 16/23, pairs 1996836
+[    707s]   blocking S3: file 17/23, pairs 1996477
+[    719s]   blocking S3: file 18/23, pairs 1996672
+[    730s]   blocking S3: file 19/23, pairs 1996355
+[    741s]   blocking S3: file 20/23, pairs 1996583
+[    752s]   blocking S3: file 21/23, pairs 1996844
+[    763s]   blocking S3: file 22/23, pairs 1996962
+[    764s]   blocking S3: file 23/23, pairs 136218
+[    800s]   train candidates: 88130748 pairs
+[    801s] train blocking done: 88130748 pairs (39.94/S1)
+[    823s]   train features chunk 1/23
+[    836s]   train features chunk 2/23
+[    848s]   train features chunk 3/23
+[    861s]   train features chunk 4/23
+[    874s]   train features chunk 5/23
+[    886s]   train features chunk 6/23
+[    899s]   train features chunk 7/23
+[    912s]   train features chunk 8/23
+[    924s]   train features chunk 9/23
+[    936s]   train features chunk 10/23
+[    950s]   train features chunk 11/23
+[    962s]   train features chunk 12/23
+[    975s]   train features chunk 13/23
+[    987s]   train features chunk 14/23
+[   1000s]   train features chunk 15/23
+[   1012s]   train features chunk 16/23
+[   1024s]   train features chunk 17/23
+[   1036s]   train features chunk 18/23
+[   1048s]   train features chunk 19/23
+[   1061s]   train features chunk 20/23
+[   1073s]   train features chunk 21/23
+[   1086s]   train features chunk 22/23
+[   1088s]   train features chunk 23/23
+[   1111s] train pairs 9984287 pos=821985 features A=23 B=50
+[   1460s] stage A trained
+[   1474s] holdout blocking recall (top_k=20): 0.9500, cands/S1=39.94
+[   1474s]   stageA keep_k=3 thr=0.0: cands/S1=6.00 recall=0.9017
+[   1474s]   stageA keep_k=3 thr=0.005: cands/S1=4.23 recall=0.9014
+[   1474s]   stageA keep_k=3 thr=0.01: cands/S1=4.13 recall=0.9012
+[   1474s]   stageA keep_k=3 thr=0.02: cands/S1=3.97 recall=0.9006
+[   1474s]   stageA keep_k=3 thr=0.05: cands/S1=3.69 recall=0.8983
+[   1474s]   stageA keep_k=3 thr=0.1: cands/S1=3.51 recall=0.8946
+[   1474s]   stageA keep_k=4 thr=0.0: cands/S1=8.00 recall=0.9409
+[   1474s]   stageA keep_k=4 thr=0.005: cands/S1=4.62 recall=0.9405
+[   1474s]   stageA keep_k=4 thr=0.01: cands/S1=4.48 recall=0.9402
+[   1474s]   stageA keep_k=4 thr=0.02: cands/S1=4.27 recall=0.9394
+[   1474s]   stageA keep_k=4 thr=0.05: cands/S1=3.93 recall=0.9366
+[   1474s]   stageA keep_k=4 thr=0.1: cands/S1=3.71 recall=0.9319
+[   1474s]   stageA keep_k=5 thr=0.0: cands/S1=10.00 recall=0.9490
+[   1474s]   stageA keep_k=5 thr=0.005: cands/S1=4.76 recall=0.9486
+[   1474s]   stageA keep_k=5 thr=0.01: cands/S1=4.60 recall=0.9482
+[   1474s]   stageA keep_k=5 thr=0.02: cands/S1=4.37 recall=0.9474
+[   1474s]   stageA keep_k=5 thr=0.05: cands/S1=4.00 recall=0.9443
+[   1474s]   stageA keep_k=5 thr=0.1: cands/S1=3.76 recall=0.9394
+[   1474s]   stageA keep_k=6 thr=0.0: cands/S1=12.00 recall=0.9497
+[   1474s]   stageA keep_k=6 thr=0.005: cands/S1=4.80 recall=0.9492
+[   1474s]   stageA keep_k=6 thr=0.01: cands/S1=4.63 recall=0.9489
+[   1474s]   stageA keep_k=6 thr=0.02: cands/S1=4.39 recall=0.9480
+[   1474s]   stageA keep_k=6 thr=0.05: cands/S1=4.01 recall=0.9449
+[   1474s]   stageA keep_k=6 thr=0.1: cands/S1=3.77 recall=0.9399
+[   1474s]   stageA keep_k=8 thr=0.0: cands/S1=16.00 recall=0.9498
+[   1474s]   stageA keep_k=8 thr=0.005: cands/S1=4.81 recall=0.9493
+[   1474s]   stageA keep_k=8 thr=0.01: cands/S1=4.64 recall=0.9490
+[   1474s]   stageA keep_k=8 thr=0.02: cands/S1=4.40 recall=0.9481
+[   1474s]   stageA keep_k=8 thr=0.05: cands/S1=4.01 recall=0.9449
+[   1474s]   stageA keep_k=8 thr=0.1: cands/S1=3.77 recall=0.9399
+[   1474s] chosen stage A: keep_k=5 thr=0.02
+[   1578s] holdout: cands/S1=4.37, F0.5 ceiling=0.9811
+[   1578s] holdout F0.5 grid: (0.3, 0.0):0.9336, (0.3, 0.6):0.9393, (0.3, 0.7):0.9393, (0.3, 0.8):0.9387, (0.3, 0.9):0.9358, (0.35, 0.0):0.9382, (0.35, 0.6):0.9425, (0.35, 0.7):0.9425, (0.35, 0.8):0.9419, (0.35, 0.9):0.9390, (0.4, 0.0):0.9420, (0.4, 0.6):0.9451, (0.4, 0.7):0.9451, (0.4, 0.8):0.9445, (0.4, 0.9):0.9416, (0.45, 0.0):0.9447, (0.45, 0.6):0.9468, (0.45, 0.7):0.9468, (0.45, 0.8):0.9462, (0.45, 0.9):0.9433, (0.5, 0.0):0.9472, (0.5, 0.6):0.9484, (0.5, 0.7):0.9484, (0.5, 0.8):0.9478, (0.5, 0.9):0.9449, (0.55, 0.0):0.9487, (0.55, 0.6):0.9495, (0.55, 0.7):0.9496, (0.55, 0.8):0.9490, (0.55, 0.9):0.9461, (0.6, 0.0):0.9502, (0.6, 0.7):0.9503, (0.6, 0.8):0.9498, (0.6, 0.9):0.9470, (0.65, 0.0):0.9510, (0.65, 0.7):0.9509, (0.65, 0.8):0.9504, (0.65, 0.9):0.9475, (0.7, 0.0):0.9508, (0.7, 0.8):0.9504, (0.7, 0.9):0.9476, (0.75, 0.0):0.9504, (0.75, 0.8):0.9501, (0.75, 0.9):0.9474, (0.8, 0.0):0.9492, (0.8, 0.9):0.9466, (0.85, 0.0):0.9468, (0.85, 0.9):0.9453, (0.9, 0.0):0.9426
+[   1578s] BEST (thr, gate) (0.65, 0.0) -> holdout macro F0.5 = 0.9510
+[   1578s] top B features: d_jacc, a_tset, n_partial, n_jw, n_ratio, d_len2, n_only2, a_jacc, d_common, score_rel, a_partial, rank, n_concat_ratio, a_tset_gap, rev_n
+[   1687s] test: S1=1732544 targets=9969589 countries={'India': 809986, 'France': 259452, 'US': 663106}
+[   1932s]   blocking S2: file 1/18, pairs 1998154
+[   1950s]   blocking S2: file 2/18, pairs 1998084
+[   1967s]   blocking S2: file 3/18, pairs 1998170
+[   1985s]   blocking S2: file 4/18, pairs 1998076
+[   2002s]   blocking S2: file 5/18, pairs 1998212
+[   2019s]   blocking S2: file 6/18, pairs 1997960
+[   2037s]   blocking S2: file 7/18, pairs 1998001
+[   2054s]   blocking S2: file 8/18, pairs 1998066
+[   2071s]   blocking S2: file 9/18, pairs 1998040
+[   2089s]   blocking S2: file 10/18, pairs 1998393
+[   2106s]   blocking S2: file 11/18, pairs 1998088
+[   2124s]   blocking S2: file 12/18, pairs 1997904
+[   2141s]   blocking S2: file 13/18, pairs 1998063
+[   2159s]   blocking S2: file 14/18, pairs 1998100
+[   2176s]   blocking S2: file 15/18, pairs 1998063
+[   2193s]   blocking S2: file 16/18, pairs 1997962
+[   2211s]   blocking S2: file 17/18, pairs 1998161
+[   2216s]   blocking S2: file 18/18, pairs 650316
+[   2402s]   blocking S3: file 1/18, pairs 1998032
+[   2420s]   blocking S3: file 2/18, pairs 1997953
+[   2438s]   blocking S3: file 3/18, pairs 1998107
+[   2456s]   blocking S3: file 4/18, pairs 1997987
+[   2474s]   blocking S3: file 5/18, pairs 1998200
+[   2492s]   blocking S3: file 6/18, pairs 1997990
+[   2510s]   blocking S3: file 7/18, pairs 1998043
+[   2528s]   blocking S3: file 8/18, pairs 1998121
+[   2546s]   blocking S3: file 9/18, pairs 1997999
+[   2563s]   blocking S3: file 10/18, pairs 1998289
+[   2581s]   blocking S3: file 11/18, pairs 1997800
+[   2599s]   blocking S3: file 12/18, pairs 1997740
+[   2617s]   blocking S3: file 13/18, pairs 1998035
+[   2635s]   blocking S3: file 14/18, pairs 1998032
+[   2653s]   blocking S3: file 15/18, pairs 1997967
+[   2671s]   blocking S3: file 16/18, pairs 1998093
+[   2688s]   blocking S3: file 17/18, pairs 1998011
+[   2694s]   blocking S3: file 18/18, pairs 650324
+[   2743s]   test candidates: 69234536 pairs
+Windows fatal exception: access violationWindows fatal exception: access violation
+
+
+
+Thread 0xThread 0x000018ac (most recent call first):
+000018ac (most recent call first):
+  File   File "C:\Users\RISHABH\AppData\Roaming\Python\Python311\site-packages\polars\lazyframe\frame.py"C:\Users\RISHABH\AppData\Roaming\Python\Python311\site-packages\polars\lazyframe\frame.py"", line , line 2407 in 2407 in collectcollect
+  File 
+  File ""C:\Users\RISHABH\AppData\Roaming\Python\Python311\site-packages\polars\lazyframe\opt_flags.py"C:\Users\RISHABH\AppData\Roaming\Python\Python311\site-packages\polars\lazyframe\opt_flags.py", line 330, line 330 in wrapper in wrapper
+  File 
+  File ""C:\Users\RISHABH\AppData\Roaming\Python\Python311\site-packages\polars\_utils\deprecation.py"C:\Users\RISHABH\AppData\Roaming\Python\Python311\site-packages\polars\_utils\deprecation.py", line 97, line 97 in wrapper
+ in wrapper
+  File   File "C:\Users\RISHABH\AppData\Roaming\Python\Python311\site-packages\polars\dataframe\frame.py""C:\Users\RISHABH\AppData\Roaming\Python\Python311\site-packages\polars\dataframe\frame.py", line , line 10007 in 10007 in select
+  File select
+  File ""C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\features.pyC:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\features.py"", line , line 77 in build_features77 in build_features
+
+  File   File ""C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\pipeline.py"C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\pipeline.py", line , line 54 in featurize
+54 in featurize
+  File   File ""C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\pipeline.py"C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\pipeline.py", line 210 in , line 210 in main
+  File "main
+  File "C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\pipeline.py"C:\Users\RISHABH\Desktop\AWS_hack\code\business_entity_resolution\src\pipeline.py", line 227, line 227 in  in <module>
+<module>
+exit=139

@@ -1,0 +1,81 @@
+﻿# Dependencies
+node_modules/
+*/node_modules/
+package-lock.json.bak
+
+# Next.js / Node build output
+.next/
+*/.next/
+out/
+frontend/build/
+frontend/dist/
+backend/dist/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!*.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Python (anchored to the vision sidecar: a bare `lib/` here would also swallow
+# application source directories such as frontend/src/lib)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+vision-service/env/
+vision-service/venv/
+vision-service/.venv/
+vision-service/build/
+vision-service/develop-eggs/
+vision-service/dist/
+vision-service/downloads/
+vision-service/eggs/
+vision-service/.eggs/
+vision-service/.venv/lib/
+vision-service/.venv/lib64/
+vision-service/parts/
+vision-service/sdist/
+vision-service/var/
+vision-service/wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+
+# OS and Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+scratch/
+temp/
+tmp/
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# Local credentials and secrets. Never commit: git history keeps a secret
+# after the file is deleted, so the only real fix is rotating the password.
+CREDENTIALS.local.txt
+*.local.txt
+*credentials*.txt
+*secrets*.txt

@@ -1,0 +1,5 @@
+[      4s] train rows 1311887, entities 300000, features 69 (ce: ['ce', 'ce2'])
+[    707s] validation: round1 (0.8, 0.973619883062704), round2 (0.725, 0.9733601485985683)
+[   1749s] round-2 top features: pb, ce2, ce, pb_gap_src, pb_sum_others, score_rel, wa_only1_max, wn_common_max, wn_common_sum, sib_name_mean, wa_only1_sum, name_score, score, rev_n, pb_sum, rank, sib_addr_max, a_len1, wa_common_max, sib_addr_mean
+[   3108s] test: threshold 0.725, matched pairs 5600482, non-empty S1 1622433/1732544
+EXIT 0

@@ -1,0 +1,20 @@
+[    138s]   test chunk 10/18 scored (rss 2.7 GB)
+[    141s]   test chunk 10/18 done
+[    148s]   test chunk 11/18 scored (rss 2.7 GB)
+[    291s]   test chunk 11/18 done
+[    122s]   test chunk 12/18 scored (rss 2.8 GB)
+[    415s]   test chunk 12/18 done
+[    144s]   test chunk 13/18 scored (rss 2.8 GB)
+[    561s]   test chunk 13/18 done
+[    123s]   test chunk 14/18 scored (rss 2.6 GB)
+[    686s]   test chunk 14/18 done
+[    129s]   test chunk 15/18 scored (rss 2.8 GB)
+[    818s]   test chunk 15/18 done
+[    152s]   test chunk 16/18 scored (rss 2.7 GB)
+[    973s]   test chunk 16/18 done
+[    146s]   test chunk 17/18 scored (rss 2.6 GB)
+[   1122s]   test chunk 17/18 done
+[     56s]   test chunk 18/18 scored (rss 1.3 GB)
+[   1181s]   test chunk 18/18 done
+[   1201s] test: cands/S1=5.21, matched pairs=5614487, non-empty S1=1629939/1732544
+exit=0

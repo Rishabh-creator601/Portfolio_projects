@@ -1,0 +1,52 @@
+RESUME NOTES - Amazon ML Challenge 2026 (Team Out of Bounds)
+Stopped: 26 Sep 2026, ~20:20 IST. Nothing is running on the laptop.
+======================================================================
+
+DONE
+----
+- v1 submitted to leaderboard: 0.940467, rank 1355  (output/matching_results.tsv)
+- Valid final package (fallback): Out_of_Bounds_submission.zip
+- v2 matcher experiments (validation, 120k-entity holdout, ceiling 0.9814):
+    v1 features 0.9520 -> + rare-word/house-number features 0.9641 -> + second-round model 0.9666
+- Train survivor table (600k entities) ........ work/train_surv/   (23 chunks)
+- Test survivor table (all 9.03M test pairs) ... work/test_surv/    (18 chunks)
+- MiniLM cross-encoder, Kaggle 2x T4: DONE, 97.3% pair accuracy
+    scores in work/ce/ce_test.parquet and work/ce/ce_train_lgb.parquet
+- Memory fix for second-round model (batched sibling features) - applied, not yet run
+
+STILL RUNNING (on Kaggle, not the laptop)
+-----------------------------------------
+- mDeBERTa-v3 cross-encoder: https://www.kaggle.com/code/rishabh2007/bizer-crossencoder-mdeberta
+  Started ~19:03. Its output stays on Kaggle after it finishes.
+
+WHAT TO RESTART TOMORROW (in this order, ONE job at a time - laptop has 16 GB)
+------------------------------------------------------------------------------
+Close Chrome / heavy apps first. From C:\Users\RISHABH\Desktop\AWS_hack :
+
+1. Download mDeBERTa scores (if the Kaggle kernel status is COMPLETE):
+     python -m kaggle kernels status rishabh2007/bizer-crossencoder-mdeberta
+     python -m kaggle kernels output rishabh2007/bizer-crossencoder-mdeberta -p work/kaggle_logs/mdeberta -o
+     copy ce2_test.parquet and ce2_train_lgb.parquet into work/ce/
+   (if status is ERROR: read the log in work/kaggle_logs/mdeberta and re-push kaggle_deberta/)
+
+2. v2 (no transformer), ~50 min  -> output_v2/matching_results.tsv  (UPLOAD)
+     python code/business_entity_resolution/src/final_model.py --data dataset/student_resource/dataset --work work --out output_v2
+
+3. v3/v4 (with transformer scores), ~30 min each -> UPLOAD the better one
+     python code/business_entity_resolution/src/final_model.py --data dataset/student_resource/dataset --work work --out output_v3 --ce ce
+     python code/business_entity_resolution/src/final_model.py --data dataset/student_resource/dataset --work work --out output_v4 --ce ce ce2
+   Validation scores are written to work/final_val_*.json.
+   Always validate before uploading:
+     python dataset/student_resource/utils/validate_submission.py --matching output_vX/matching_results.tsv --candidate output_vX/candidate_pairs.tsv --test-dir dataset/student_resource/dataset/test --check-ids
+
+WHAT IS LEFT AFTER THAT
+-----------------------
+4. Raise the 0.981 ceiling (needed for a top-50 attempt):
+   - run the query-expansion diagnostic: src/expansion_probe.py --work work
+   - graph linking / query expansion, embedding-based blocking on Kaggle GPU
+5. Record new leaderboard scores/ranks in progress_log.txt
+6. Update code/README/Documentation_template.md, rebuild Out_of_Bounds_submission.zip,
+   and do one clean reproducibility run before the final submission.
+
+SECURITY: the Kaggle API token was pasted in chat - regenerate it on kaggle.com/settings
+after the challenge.

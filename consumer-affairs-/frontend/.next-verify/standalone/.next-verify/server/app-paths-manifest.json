@@ -1,0 +1,12 @@
+{
+  "/_not-found": "app/_not-found.js",
+  "/admin/users/page": "app/admin/users/page.js",
+  "/login/page": "app/login/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/page": "app/page.js",
+  "/scan/camera/page": "app/scan/camera/page.js",
+  "/scan/upload/page": "app/scan/upload/page.js",
+  "/repository/page": "app/repository/page.js",
+  "/results/[id]/page": "app/results/[id]/page.js",
+  "/rules/page": "app/rules/page.js"
+}

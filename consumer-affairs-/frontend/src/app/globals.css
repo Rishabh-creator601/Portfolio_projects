@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyan-deep: #083344;
+  --cyan-brand: #0e7490;
+  --cyan-bright: #06b6d4;
+  --cyan-soft: #ecfeff;
+  --app-bg: #f3fbfd;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-[var(--app-bg)] text-slate-900 font-inter antialiased;
+  }
+
+  /* One focus treatment across the whole console, always in brand cyan. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-cyan-bright ring-offset-2 ring-offset-white;
+  }
+
+  ::selection {
+    @apply bg-cyan-200 text-cyan-950;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl border border-cyan-100 shadow-card;
+  }
+
+  .card-interactive {
+    @apply card transition-shadow hover:shadow-card-hover;
+  }
+
+  .section-title {
+    @apply text-sm font-semibold text-cyan-950;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-cyan-950 tracking-tight;
+  }
+
+  .page-subtitle {
+    @apply text-sm text-slate-500 mt-1;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-cyan-200 bg-white px-3 py-2 text-sm text-slate-900
+           placeholder:text-slate-400 transition-colors
+           focus:border-cyan-bright focus:outline-none focus:ring-2 focus:ring-cyan-bright/30;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-cyan-900 mb-1.5;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden rounded bg-cyan-50/80;
+  }
+
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full;
+    background-image: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.14), transparent);
+    animation: shimmer 1.6s infinite;
+  }
+}
+
+@layer utilities {
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-bright focus-visible:ring-offset-2;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Cyan scrollbars, so even the chrome of the app stays on-theme. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #a5f3fc;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #22d3ee;
+  background-clip: content-box;
+}
+
+* {
+  scrollbar-color: #a5f3fc transparent;
+  scrollbar-width: thin;
+}

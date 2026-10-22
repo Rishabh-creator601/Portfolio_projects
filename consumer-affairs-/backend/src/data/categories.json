@@ -1,0 +1,283 @@
+[
+  {
+    "id": "unknown",
+    "name": "Unclassified",
+    "description": "No category matched; baseline Rule 6 declarations only.",
+    "unitOfDeclaration": "weight",
+    "exemptions": { "date": false, "mrp": false, "reason": "" },
+    "overridingLaw": null,
+    "whenPackedAllowed": false
+  },
+
+  {
+    "id": "food_general",
+    "name": "Packaged food articles - general",
+    "description": "PCR 4.1.1. Date marking is governed by the FSS Act and regulations.",
+    "unitOfDeclaration": "weight",
+    "exemptions": {
+      "date": true,
+      "mrp": false,
+      "reason": "Rule 6(1)(d): date marking for food is governed by the FSSAI labelling regulations."
+    },
+    "overridingLaw": "FSSAI",
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "baby_food",
+    "name": "Baby food, weaning food and milk powder",
+    "description": "PCR 4.1.2. Second Schedule prescribed pack sizes apply.",
+    "unitOfDeclaration": "weight",
+    "secondSchedulePackSizes": [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 5000, 10000],
+    "exemptions": { "date": true, "mrp": false, "reason": "FSSAI governs date marking." },
+    "overridingLaw": "FSSAI",
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "milk_powder",
+    "name": "Milk powder",
+    "description": "PCR 4.1.2. Second Schedule prescribed pack sizes apply.",
+    "unitOfDeclaration": "weight",
+    "secondSchedulePackSizes": [50, 100, 200, 500, 1000],
+    "exemptions": { "date": true, "mrp": false, "reason": "FSSAI governs date marking." },
+    "overridingLaw": "FSSAI",
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "biscuits_bread",
+    "name": "Biscuits, bread and bakery",
+    "description": "PCR 4.1.3.",
+    "unitOfDeclaration": "weight",
+    "secondSchedulePackSizes": [25, 50, 75, 100, 150, 200, 250, 300, 400, 500, 600, 700, 800, 900, 1000],
+    "exemptions": { "date": true, "mrp": false, "reason": "FSSAI governs date marking." },
+    "overridingLaw": "FSSAI",
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "cereals_pulses",
+    "name": "Cereals, pulses, flour, atta, rawa, suji and rice powder",
+    "description": "PCR 4.1.4.",
+    "unitOfDeclaration": "weight",
+    "exemptions": { "date": true, "mrp": false, "reason": "FSSAI governs date marking." },
+    "overridingLaw": "FSSAI",
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "tea_coffee",
+    "name": "Tea, coffee and beverage-mix powders",
+    "description": "PCR 4.1.5.",
+    "unitOfDeclaration": "weight",
+    "exemptions": { "date": true, "mrp": false, "reason": "FSSAI governs date marking." },
+    "overridingLaw": "FSSAI",
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "edible_oil",
+    "name": "Edible oil, vanaspati, ghee and butter oil",
+    "description": "PCR 4.1.6. Fourth Schedule: weight or volume.",
+    "unitOfDeclaration": "weight_or_volume",
+    "fourthScheduleItem": "Edible oil, vanaspati, ghee and butter oil",
+    "exemptions": { "date": true, "mrp": false, "reason": "FSSAI governs date marking." },
+    "overridingLaw": "FSSAI",
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "salt",
+    "name": "Salt",
+    "description": "PCR 4.1.7.",
+    "unitOfDeclaration": "weight",
+    "exemptions": { "date": true, "mrp": false, "reason": "FSSAI governs date marking." },
+    "overridingLaw": "FSSAI",
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "aerated_beverage",
+    "name": "Aerated soft drinks and non-alcoholic beverages",
+    "description": "PCR 4.1.8. Usually a curved bottle or can, so size checks need a flat capture.",
+    "unitOfDeclaration": "volume",
+    "exemptions": { "date": true, "mrp": false, "reason": "FSSAI governs date marking." },
+    "overridingLaw": "FSSAI",
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "packaged_water",
+    "name": "Packaged drinking water and mineral water",
+    "description": "PCR 4.1.9.",
+    "unitOfDeclaration": "volume",
+    "exemptions": { "date": true, "mrp": false, "reason": "FSSAI governs date marking." },
+    "overridingLaw": "FSSAI",
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "alcoholic_beverage",
+    "name": "Alcoholic beverages and spirituous liquor",
+    "description": "PCR 4.1.10. State excise law governs and largely displaces these Rules.",
+    "unitOfDeclaration": "volume",
+    "exemptions": {
+      "date": true,
+      "mrp": false,
+      "reason": "State excise law governs labelling and price for liquor."
+    },
+    "overridingLaw": "State excise",
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "curd_sweets_sauces",
+    "name": "Curd, sweets, sauces, honey and syrups",
+    "description": "PCR 4.1.11. Fourth Schedule prescribes weight for curd, sweets and sauces.",
+    "unitOfDeclaration": "weight",
+    "fourthScheduleItem": "Sauces, all kinds",
+    "exemptions": { "date": true, "mrp": false, "reason": "FSSAI governs date marking." },
+    "overridingLaw": "FSSAI",
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "ice_cream",
+    "name": "Ice cream and similar frozen products",
+    "description": "PCR 4.1.12. Fourth Schedule unit changed from volume to weight w.e.f. 01.07.2012.",
+    "unitOfDeclaration": "weight",
+    "fourthScheduleItem": "Ice cream and other similar frozen products",
+    "exemptions": { "date": true, "mrp": false, "reason": "FSSAI governs date marking." },
+    "overridingLaw": "FSSAI",
+    "whenPackedAllowed": false
+  },
+
+  {
+    "id": "cosmetics",
+    "name": "Cosmetics - creams, shampoos, lotions and perfumes",
+    "description": "PCR 4.2.1. Drugs and Cosmetics Rules, 1945 override.",
+    "unitOfDeclaration": "weight_or_measure",
+    "fourthScheduleItem": "Cosmetics including creams, shampoo, lotions and perfumes",
+    "exemptions": {
+      "date": true,
+      "mrp": false,
+      "reason": "Date marking is governed by the Drugs and Cosmetics Rules, 1945."
+    },
+    "overridingLaw": "D&C Rules 1945",
+    "whenPackedAllowed": true
+  },
+  {
+    "id": "drug_formulation",
+    "name": "Drug formulations under the DPCO, 1995",
+    "description": "PCR 4.2.2. Rule 26(c) excludes these from Chapter II entirely.",
+    "unitOfDeclaration": "weight",
+    "exemptions": {
+      "date": true,
+      "mrp": true,
+      "reason": "Rule 26(c): scheduled and non-scheduled formulations are outside these Rules."
+    },
+    "overridingLaw": "DPCO 1995 / D&C Rules",
+    "outOfScope": true,
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "toilet_soap",
+    "name": "Toilet soap, laundry soap and detergent cakes",
+    "description": "PCR 4.2.3. Third Schedule permits the 'when packed' qualifier.",
+    "unitOfDeclaration": "weight",
+    "exemptions": { "date": false, "mrp": false, "reason": "" },
+    "overridingLaw": null,
+    "whenPackedAllowed": true
+  },
+  {
+    "id": "detergent_powder",
+    "name": "Non-soapy detergent powder",
+    "description": "PCR 4.2.4.",
+    "unitOfDeclaration": "weight",
+    "exemptions": { "date": false, "mrp": false, "reason": "" },
+    "overridingLaw": null,
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "aerosols_chemicals",
+    "name": "Aerosols, acids, liquid chemicals and gases",
+    "description": "PCR 4.2.5. Fourth Schedule prescribes weight for aerosols.",
+    "unitOfDeclaration": "weight",
+    "fourthScheduleItem": "Aerosol products",
+    "exemptions": { "date": false, "mrp": false, "reason": "" },
+    "overridingLaw": null,
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "lpg_cylinder",
+    "name": "Domestic LPG cylinders",
+    "description": "PCR 4.2.6. Fourth Schedule prescribes weight. PSU cylinders are date exempt.",
+    "unitOfDeclaration": "weight",
+    "fourthScheduleItem": "Liquefied petroleum gas",
+    "exemptions": {
+      "date": true,
+      "mrp": false,
+      "reason": "PSU LPG cylinders are exempt from the month and year declaration."
+    },
+    "overridingLaw": null,
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "paints_varnishes",
+    "name": "Paints, varnishes and enamels",
+    "description": "PCR 4.2.7. Fourth Schedule prescribes volume, except paste and solid paint.",
+    "unitOfDeclaration": "volume",
+    "fourthScheduleItem": "Paints other than paste or solid paint, varnish, varnish stains, enamels",
+    "exemptions": { "date": false, "mrp": false, "reason": "" },
+    "overridingLaw": null,
+    "whenPackedAllowed": false
+  },
+
+  {
+    "id": "textiles_by_piece",
+    "name": "Textiles sold by piece",
+    "description": "PCR 4.3.1. Rule 14 requires finished dimensions.",
+    "unitOfDeclaration": "length",
+    "dimensionsRelevant": true,
+    "exemptions": { "date": false, "mrp": false, "reason": "" },
+    "overridingLaw": null,
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "ready_made_garments",
+    "name": "Ready-made garments",
+    "description": "PCR 4.3.2. Fourth Schedule prescribes number.",
+    "unitOfDeclaration": "number",
+    "fourthScheduleItem": "Ready-made garments",
+    "dimensionsRelevant": true,
+    "exemptions": { "date": false, "mrp": false, "reason": "" },
+    "overridingLaw": null,
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "cement_fertiliser",
+    "name": "Cement and fertiliser in bags",
+    "description": "PCR 4.3.6. Rule 3(a) lifts the 25 kg ceiling to 50 kg for these only.",
+    "unitOfDeclaration": "weight",
+    "maxRetailWeightKg": 50,
+    "exemptions": { "date": false, "mrp": false, "reason": "" },
+    "overridingLaw": null,
+    "whenPackedAllowed": false
+  },
+
+  {
+    "id": "bidi",
+    "name": "Bidi and incense sticks",
+    "description": "PCR 4.4.1. Exempt from both date marking and retail sale price.",
+    "unitOfDeclaration": "number",
+    "exemptions": {
+      "date": true,
+      "mrp": true,
+      "reason": "Bidi and incense sticks are exempt from the month/year and the retail sale price."
+    },
+    "overridingLaw": null,
+    "whenPackedAllowed": false
+  },
+  {
+    "id": "seeds",
+    "name": "Seeds certified under the Seeds Act, 1966",
+    "description": "PCR 4.4.2. The Seeds Act governs labelling.",
+    "unitOfDeclaration": "weight",
+    "exemptions": {
+      "date": true,
+      "mrp": false,
+      "reason": "Date marking for certified seed is governed by the Seeds Act, 1966."
+    },
+    "overridingLaw": "Seeds Act 1966",
+    "whenPackedAllowed": false
+  }
+]

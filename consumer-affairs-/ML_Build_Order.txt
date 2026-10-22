@@ -1,0 +1,114 @@
+LM-VERIFY -- ML / VISION BUILD ORDER
+Frontend and backend are ready. This is the order to build the vision layer.
+
+
+1. OCR SIDECAR WITH BOTH ENGINES BEHIND ONE INTERFACE
+
+   One contract, two implementations:
+       POST /ocr  ->  [{text, box, confidence}, ...]
+
+   Implement PaddleOCR (PP-OCRv5) and EasyOCR against it.
+   Start with PP-OCRv5: better on small dense print, better multilingual
+   coverage for the regional-language roadmap, faster on CPU.
+   Do not pick by reputation -- run both over the ground-truth set from
+   step 2 and keep the winner. A day's work, turns a guess into a
+   measurement.
+
+
+2. GROUND-TRUTH SET (~150 PACKAGES) -- BUILD THIS BEFORE THE MODELS
+
+   Not after. It is what tells you whether any of the rest works, and it
+   is the accuracy table currently missing from the solution document.
+
+   Spread across food / cosmetics / detergent / bidi so the category
+   exemption paths are covered.
+   For each package record: the six declaration heads as a human reads
+   them, plus hand-measured numeral heights in mm for a subset.
+   Report per-rule precision / recall plus the review-queue rate.
+
+
+3. REGEX TAGGER FIRST, MEASURE, THEN VLM FOR THE REMAINDER
+
+   Four of the six heads are statutorily patterned -- regex plus a fuzzy
+   match gets most of the way:
+     - MRP: Rule 6(3) prescribes the wording. Match phrase, parse number.
+     - Net quantity: number + closed unit set (g, kg, ml, L, N, cm, m),
+       cross-checked against the Rule 13 sub-division rule.
+     - Month/year: bounded format space; words, numerals or both, per the
+       Explanation to Rule 6(1)(d).
+     - Consumer care: email regex, Indian phone regex, 6-digit PIN anchors
+       the address block.
+
+   The two unstructured heads -- manufacturer name/address, and common or
+   generic name -- go to a VLM with a JSON schema. That includes the
+   'manufactured by' / 'packed by' / 'imported by' attribution that
+   Explanations I and II to Rule 6 turn on, which is reading
+   comprehension, not pattern matching.
+
+   Do NOT fine-tune LayoutLMv3 or LiLT. Textbook answer, wrong here --
+   needs several hundred hand-labelled packages before it beats regex.
+   Revisit only if the VLM proves too slow or costly at volume.
+
+   Keep the model on the extraction side of the line only. Once fields
+   are extracted and confirmed, the rule engine stays pure functions over
+   JSON. That boundary is what makes a verdict defensible.
+
+
+4. BINARIZE -> CONNECTED COMPONENTS -> MM CALIBRATION
+
+   The hardest and most valuable part. Validate against packages measured
+   by hand with a scale.
+
+   DO NOT measure font height from OCR bounding boxes. CRAFT and Paddle
+   both return boxes around a text REGION, sized to its ascenders and
+   descenders plus padding. A box around '200 g' is as tall as the g
+   descender; a box around 'MRP' has no descender at all. Measuring from
+   those is inconsistent by 20-40% depending on which letters are in the
+   string, and skews HIGH -- so it reports violations that are not there.
+   In an enforcement tool, false positives are the expensive kind.
+
+   Correct method:
+     a. OCR localizes the numeral -- that is all it is used for
+     b. Crop that region from the full-res original, upscale 3-4x
+     c. Sauvola binarize (adaptive; handles uneven packaging light better
+        than global Otsu)
+     d. Connected components -> one component per glyph
+     e. Filter to digit glyphs, take median component height in px
+     f. height_mm = median_px * mm_per_px
+
+   mm_per_px = known reference width in mm / its measured width in px,
+   computed AFTER perspective correction, never before.
+
+   CAVEAT for Known Limits: on curved surfaces -- bottles, pouches --
+   mm/px varies across the label, so one scale factor is only valid near
+   the reference card. Either require the card adjacent to the
+   declaration being measured, or route curved packages to needs-review.
+
+
+5. CONTRAST AND CLEAR-SPACE GEOMETRY
+
+   Both fall out of the same mask from step 4, so they are nearly free.
+
+   Rule 9(1)(b) contrast: WCAG-style luminance ratio, glyph pixels vs a
+   dilated-ring local background.
+   Rule 7(3): letter width measured at no less than one third of height,
+   straight off the component boxes.
+   Rule 8(1) clear space: geometric measurement of the printed-matter-free
+   margin around the quantity declaration -- one numeral height above and
+   below, twice that left and right.
+
+
+---------------------------------------------------------------------
+WHAT NEEDS NO MODEL AT ALL
+
+   De-skew / perspective      OpenCV findContours + warpPerspective
+   Blur gate                  variance of Laplacian
+   Glare detection            highlight / saturation mask
+   PDP vs side/back panel     ask the officer during capture (UI answer
+                              to an ML problem -- do not train a segmenter)
+   Sticker over MRP           edge/texture discontinuity -> officer confirms
+   Product dedup              perceptual hash + brand + quantity
+   Spell check                nspell dictionary
+
+   One OCR model, optionally one VLM for the messy tagging. Everything
+   else is classical CV and deterministic code.

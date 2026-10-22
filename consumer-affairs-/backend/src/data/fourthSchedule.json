@@ -1,0 +1,6 @@
+[
+  { "item": "Aerosol products", "unit": "Weight" },
+  { "item": "Acids in liquid form", "unit": "Weight or volume" },
+  { "item": "Cosmetics", "unit": "Weight or volume" },
+  { "item": "Paint, varnish", "unit": "Volume" }
+]

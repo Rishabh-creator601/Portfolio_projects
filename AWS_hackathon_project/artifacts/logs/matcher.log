@@ -1,0 +1,7 @@
+[      6s] rows 2621455, S1 sample 600000, base 50, extra 17
+[      6s] holdout S1 120000, ceiling 0.9814
+[    263s] B0 base: (0.675, 0.9519854748138253)
+[    623s] B1 +extra: (0.7, 0.9641381504624038)
+[    623s] B1 top features: d_jacc, a_tset, wn_only2_sum, num_absdiff, num_str_ratio, wn_only2_max, n_partial, n_jw, rank, a_tset_gap, wa_common_sum, wa_only2_max, rev_n, n_ratio, wa_wjacc, num_reldiff, score_rel, d_len2, wn_only1_max, score
+[   2169s] C +sibling: (0.7, 0.9666288123231169)
+exit=0

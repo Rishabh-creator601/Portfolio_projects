@@ -1,0 +1,39 @@
+{
+  "name": "lm-verify-backend",
+  "version": "1.0.0",
+  "description": "LM-Verify Legal Metrology compliance platform backend",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bullmq": "^4.12.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "docx": "^8.2.3",
+    "dotenv": "^16.3.1",
+    "exceljs": "^4.3.0",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "ioredis": "^5.3.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nspell": "^2.1.5",
+    "pdfkit": "^0.13.0",
+    "qrcode": "^1.5.3",
+    "sharp": "^0.32.6",
+    "uuid": "^9.0.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^11.2.0",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
+  }
+}
