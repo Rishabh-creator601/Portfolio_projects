@@ -17,3 +17,8 @@ https://github.com/user-attachments/assets/6000f5b9-272e-4b42-9dc6-f8679830c34b
 
 ## Transformer Tools (Text summarizer +  document Q/A )
 https://github.com/user-attachments/assets/b3005632-e609-421c-9b4b-4611654dd65c
+
+
+
+## Invoice agent 
+<img width="800" height="421" alt="Image" src="https://github.com/user-attachments/assets/a6356838-05e0-423b-91b3-e3c28b5e72cf" />
